@@ -12,6 +12,19 @@ public abstract class Person{
     public int getAge(){
         return age;
     }
-    public abstract void displayDetails();
+    public void setName(String name) {
+    if (name == null || name.isBlank()) {
+        throw new IllegalArgumentException("Name cannot be empty.");
+    }
+    this.name = name;
+    }
 
+    public void setAge(int age) {
+    if (age <= 0) {
+        throw new IllegalArgumentException("Age must be positive.");
+    }
+    this.age = age;
+    }
+    public abstract void displayDetails();
+    
 }
